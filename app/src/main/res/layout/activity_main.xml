@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="2dp"
+    android:paddingRight="2dp" >
+
+    <TextView
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="40sp"
+    />
+
+    <Button
+        android:id="@+id/buttonSeven"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/input"
+        android:text="7"
+        android:textSize="20sp"
+        android:onClick="numberPressed"
+    />
+
+    <Button
+        android:id="@+id/buttonEight"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8"
+        android:textSize="20sp"
+        android:layout_below = "@id/input"
+        android:layout_toRightOf = "@id/buttonSeven"
+        android:onClick="numberPressed"
+    />
+
+    <Button
+        android:id="@+id/buttonNine"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9"
+        android:textSize="20sp"
+        android:layout_below = "@id/input"
+        android:layout_toRightOf = "@id/buttonEight"
+        android:onClick="numberPressed"
+    />
+
+    <Button
+        android:id="@+id/buttonDivide"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/"
+        android:textSize="20sp"
+        android:layout_below = "@id/input"
+        android:layout_toRightOf = "@id/buttonNine"
+        android:onClick="operatorPressed"
+        />
+
+
+    <Button
+        android:id="@+id/buttonFour"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4"
+        android:textSize="20sp"
+        android:layout_below = "@id/buttonSeven"
+        android:onClick="numberPressed"
+    />
+
+    <Button
+        android:id="@+id/buttonFive"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        android:textSize="20sp"
+        android:layout_below = "@id/buttonEight"
+        android:layout_toRightOf = "@id/buttonFour"
+        android:onClick="numberPressed"
+    />
+
+    <Button
+        android:id="@+id/buttonSix"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="6"
+        android:textSize="20sp"
+        android:layout_below = "@id/buttonNine"
+        android:layout_toRightOf = "@id/buttonFive"
+        android:onClick="numberPressed"
+    />
+
+    <Button
+        android:id="@+id/buttonMultiply"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*"
+        android:textSize="20sp"
+        android:layout_below = "@id/buttonDivide"
+        android:layout_toRightOf = "@id/buttonSix"
+        android:onClick="operatorPressed"
+    />
+
+
+    <Button
+        android:id="@+id/buttonOne"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="20sp"
+        android:layout_below = "@id/buttonFour"
+        android:onClick="numberPressed"
+    />
+
+    <Button
+        android:id="@+id/buttonTwo"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:textSize="20sp"
+        android:layout_below = "@id/buttonFive"
+        android:layout_toRightOf = "@id/buttonOne"
+        android:onClick="numberPressed"
+    />
+
+    <Button
+        android:id="@+id/buttonThree"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:textSize="20sp"
+        android:layout_below = "@id/buttonSix"
+        android:layout_toRightOf = "@id/buttonTwo"
+        android:onClick="numberPressed"
+    />
+
+    <Button
+        android:id="@+id/buttonSubtract"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textSize="20sp"
+        android:layout_below = "@id/buttonMultiply"
+        android:layout_toRightOf = "@id/buttonThree"
+        android:onClick="operatorPressed"
+    />
+
+    <Button
+        android:id="@+id/buttonZero"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="20sp"
+        android:layout_below = "@id/buttonOne"
+        android:onClick="numberPressed"
+    />
+
+    <Button
+        android:id="@+id/buttonDot"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="."
+        android:textSize="20sp"
+        android:layout_below = "@id/buttonTwo"
+        android:layout_toRightOf = "@id/buttonZero"
+        android:onClick="decimalPressed"
+    />
+
+    <Button
+        android:id="@+id/buttonClear"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CLR"
+        android:textSize="20sp"
+        android:layout_below = "@id/buttonThree"
+        android:layout_toRightOf = "@id/buttonDot"
+        android:onClick="clearPressed"
+    />
+
+    <Button
+        android:id="@+id/buttonAdd"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:textSize="20sp"
+        android:layout_below = "@id/buttonSubtract"
+        android:layout_toRightOf = "@id/buttonClear"
+        android:onClick="operatorPressed"
+        />
+
+
+    <Button
+        android:id="@+id/buttonEquals"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="="
+        android:textSize="20sp"
+        android:layout_below = "@id/buttonAdd"
+        android:onClick="equalsPressed"
+        />
+
+
+</RelativeLayout>
