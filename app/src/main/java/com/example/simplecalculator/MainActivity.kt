@@ -14,6 +14,12 @@ class MainActivity : AppCompatActivity() {
     // TextView used to display the input/output
     lateinit var input: TextView
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        input = findViewById(R.id.input)
+    }
+
     // Represent whether the lastly pressed key is numeric
     var lastValueIsNumeric: Boolean = false
 
@@ -24,30 +30,25 @@ class MainActivity : AppCompatActivity() {
     var dotUsed: Boolean = false
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        input = findViewById(R.id.input)
-    }
-
     // If a number button is pressed, add it to the text view.
     fun numberPressed(view: View)
     {
+        val num = (view as Button).text
         if (error == true)
         {
-            input.text = (view as Button).text
+            input.text = num
             error = false
         }
         else
         {
-            input.append((view as Button).text)
+            input.append(num)
         }
         lastValueIsNumeric = true
     }
 
 
     // If a decimal point is clicked legally, add it to the text view.
-    fun decimalPressed(view: View)
+    fun decimalPressed(view : View)
     {
         if (error == false && dotUsed == false && lastValueIsNumeric == true)
         {
@@ -57,19 +58,25 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // If an operator is clicked, add it to the text view.
-    fun operatorPressed(view: View)
+    // If an operator is clicked legally, add it to the text view.
+    fun operatorPressed(view : View)
     {
-        if (lastValueIsNumeric == true && error == false)
+        val operator = (view as Button).text
+        if (error == false && input.length() == 0 && operator == "-")
         {
-            input.append((view as Button).text)
+            input.append(operator)
+        }
+        else if (lastValueIsNumeric == true && error == false)
+        {
+            input.append(operator)
             lastValueIsNumeric = false
             dotUsed = false
         }
     }
 
+
     // If clear is clicked, wipe the textview and reset the variables.
-    fun clearPressed(view: View)
+    fun clearPressed(view : View)
     {
         this.input.text = ""
         lastValueIsNumeric = false
@@ -78,7 +85,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // Calculate the output of the expression in textview
-    fun equalsPressed(view: View)
+    fun equalsPressed(view : View)
     {
         if (lastValueIsNumeric == true && error == false)
         {
@@ -87,6 +94,7 @@ class MainActivity : AppCompatActivity() {
             // Use exp4j library to build an expression
             val expression = ExpressionBuilder(expressionAsString).build()
 
+            // Evaluate expression if valid otherwise produce error
             try
             {
                 val ans = expression.evaluate()
